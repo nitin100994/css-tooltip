@@ -1,0 +1,38 @@
+*,::before,::after{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.avatar{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-image: url('./baggu.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.avatar::before,
+.avatar::after{
+    position: absolute;
+    top: -.25rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+}
+
+.avatar::before{
+    content: attr(data-tooltip);
+    color: white;
+    padding: .5rem;
+    width: max-content;
+    max-width: 100%;
+    background: #333;   
+}
